@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.i18n.reload" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.objectFactory" value="spring" />
+	<package name="default" extends="struts-default" namespace="/">
+		<!-- 跳转主页 -->
+		<action name="toIndex" class="IndexAction" method="toIndex">
+			<result name="success">index.jsp</result>
+		</action>
+		<!-- 请求图片 -->
+		<action name="showPhoto" class="photoAction" method="showPhoto"></action>
+		<!-- 跳转各种类型的列表页面 -->
+		<action name="toAricleList" class="ArticleAction" method="toAricleList">
+			<result name="bulletinList">bulletinList.jsp</result>
+			<result name="productList">productList.jsp</result>
+			<result name="schemeList">schemeList.jsp</result>
+			<result name="newsList">newsList.jsp</result>
+		</action>
+		<!-- 跳转各种类型的展示页面 -->
+		<action name="toAricle" class="ArticleAction" method="toAricle">
+			<result name="bulletin">bulletin.jsp</result>
+			<result name="product">product.jsp</result>
+			<result name="scheme">scheme.jsp</result>
+			<result name="news">news.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd  
+           http://www.springframework.org/schema/context  
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd  
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd  
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+  	
+	<!-- 业务层Service  -->
+	<bean id="bulletinService" class="com.dacnx.www.server.impl.BulletinServerImpl">
+		<property name="jdbcTemplate">
+			<ref bean="jdbcTemplate"/>
+		</property>
+	</bean>
+	<bean id="productService" class="com.dacnx.www.server.impl.ProductServerImpl">
+		<property name="jdbcTemplate">
+			<ref bean="jdbcTemplate"/>
+		</property>
+	</bean>
+	<bean id="schemeService" class="com.dacnx.www.server.impl.SchemeServerImpl">
+		<property name="jdbcTemplate">
+			<ref bean="jdbcTemplate"/>
+		</property>
+	</bean>
+	<bean id="newsService" class="com.dacnx.www.server.impl.NewsServerImpl">
+		<property name="jdbcTemplate">
+			<ref bean="jdbcTemplate"/>
+		</property>
+	</bean>
+	<bean id="photoService" class="com.dacnx.www.server.impl.PhotoServiceImpl">
+		<property name="jdbcTemplate">
+			<ref bean="jdbcTemplate"/>
+		</property>
+	</bean>
+	<bean id="schemeTypeService" class="com.dacnx.www.server.impl.SchemeTypeServerImpl">
+		<property name="jdbcTemplate">
+			<ref bean="jdbcTemplate"/>
+		</property>
+	</bean>
+	
+	
+	<!-- 控制层Action -->
+	<bean id="IndexAction" class="com.dacnx.www.action.IndexAction">
+		<property name="schemeServer">
+			<ref bean="schemeService" />
+		</property>
+		<property name="productServer">
+			<ref bean="productService" />
+		</property>
+		<property name="bulletinServer">
+			<ref bean="bulletinService" />
+		</property>
+		<property name="newsServer">
+			<ref bean="newsService" />
+		</property>
+		<property name="photoserver">
+			<ref bean="photoService" />
+		</property>
+		<property name="schemeTypeServer">
+			<ref bean="schemeTypeService" />
+		</property>
+	</bean>
+	<bean id="ArticleAction" class="com.dacnx.www.action.ArticleAction">
+		<property name="schemeServer">
+			<ref bean="schemeService" />
+		</property>
+		<property name="productServer">
+			<ref bean="productService" />
+		</property>
+		<property name="bulletinServer">
+			<ref bean="bulletinService" />
+		</property>
+		<property name="newsServer">
+			<ref bean="newsService" />
+		</property>
+		<property name="photoserver">
+			<ref bean="photoService" />
+		</property>
+	</bean>
+	<bean id="photoAction" class="com.dacnx.www.action.PhotoAction" scope="prototype"></bean>
+</beans>  
