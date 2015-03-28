@@ -40,10 +40,12 @@
 				<li><a href="toAricleList?articleType=NL" title="农信要闻">农信要闻</a></li>
 				<li><a href="toAricleList?articleType=PL" title="产品展示">产品展示</a></li>
 				<li><a href="toAricleList?articleType=SL" title="业务介绍">业务介绍</a></li>
-				<li><a href="messages.html" title="联系我们">联系我们</a></li>
+				<!-- 
 				<li><a href="#" title="其他模块">其他模块</a></li>
 				<li><a href="#" title="其他模块">其他模块</a></li>
 				<li><a href="#" title="其他模块">其他模块</a></li>
+				<li><a href="#" title="其他模块">其他模块</a></li>
+				 -->
 			</ul>
 		</div>
 	</div>
@@ -53,7 +55,7 @@
 		<div id="banh">
 			<ul>
 				<s:iterator value="photoList" var="photos">
-					<li><img src="showPhoto?photo.id=${ photos.id }" /></li>
+					<li><img src="showPhoto?photoType=0&photo.id=${ photos.id }" /></li>
 				</s:iterator>
 			</ul>
 		</div>
@@ -135,7 +137,7 @@
 					<ul id="gunul">
 						<s:iterator value="productList" var="product">
 						<li><a href="toAricle?articleType=PL&product.id=${ product.id }" title=" ${ product.title }">
-								<img src="images/pci01.jpg" alt="${ product.title }" />
+								<img src="showPhoto?photoType=1&photo.id=${ product.photo_id }" onload="this.width=192;height=135"/>
 							</a>
 							<h3>
 								<a href="toAricle?articleType=PL&product.id=${ product.id }" title="${ product.title }">${ product.title }</a>
@@ -161,10 +163,9 @@
 		</div>
 		<div class="clear"></div>
 		<div class="blank10"></div>
-		<div class="alli">
+		<div class="alli_2">
 			<div class="title">
 				<a href="#" class="indmore"></a>
-				<h2>业务介绍</h2>
 			</div>
 			<div class="anliacon  borl_r" >
 				<table width="100%">
@@ -222,93 +223,17 @@
 			</div>
 			<div class="alli_bot2"></div>
 		</div>
-		<div class="ind_contact">
-			<div class="ind_contact">
-				<h2>企业文化</h2>
-				<div class="catacta borl_r">
-					<p>感 悟</p>
-					<p>漠漠清寒后，幸福还在</p>
-					<p>信合之家</p>
-					<p>银行的优质文明服务</p>
-					<p>感 悟</p>
-					<p>漠漠清寒后，幸福还在</p>
-					<p>信合之家</p>
-					<p>银行的优质文明服务</p>
-					<p>感 悟</p>
-					<p>漠漠清寒后，幸福还在</p>
-					<p>信合之家</p>
-				</div>
-				<div class="catacta_bot"></div>
-			</div>
-		</div>
-		
 		<div class="clear"></div>
 		<div class="blank10"></div>
-		<div class="ind_contact">
-			<div class="ind_contact">
-				<h2>金融工具</h2>
-				<div class="catacta borl_r">
-					<p>活期存款计算器</p>
-					<p>通知存款计算器</p>
-					<p>整存整取计算器</p>
-					<p>活期存款计算器</p>
-					<p>通知存款计算器</p>
-					<p>整存整取计算器</p>
-				</div>
-				<div class="catacta_bot"></div>
-			</div>
-		</div>
 		<div class="clear"></div>
 		<div class="blank10"></div>
 		
-		<div class="ind_contact">
-			<div class="ind_contact">
-				<h2>温馨提示</h2>
-				<div class="catacta borl_r">
-					<p>温馨提示</p>
-					<p>温馨提示</p>
-					<p>温馨提示</p>
-					<p>温馨提示</p>
-					<p>温馨提示</p>
-					<p>温馨提示</p>
-				</div>
-				<div class="catacta_bot"></div>
-			</div>
-		</div>
 		<div class="clear"></div>
 		<div class="blank10"></div>
 		
-		<div class="ind_contact">
-			<div class="ind_contact">
-				<h2>友情链接</h2>
-				<div class="catacta borl_r">
-					<p>友情链接</p>
-					<p>友情链接</p>
-					<p>友情链接</p>
-					<p>友情链接</p>
-					<p>友情链接</p>
-					<p>友情链接</p>
-				</div>
-				<div class="catacta_bot"></div>
-			</div>
-		</div>
 		<div class="clear"></div>
 		<div class="blank10"></div>
 		
-				<div class="ind_contact">
-			<div class="ind_contact">
-				<h2>营业网点</h2>
-				<div class="catacta borl_r">
-					<p>营业网点</p>
-					<p>营业网点</p>
-					<p>营业网点</p>
-					<p>营业网点</p>
-					<p>营业网点</p>
-					<p>营业网点</p>
-				</div>
-				<div class="catacta_bot"></div>
-			</div>
-		</div>
 		<div class="clear"></div>
 		<div class="blank10"></div>
 	</div>
@@ -370,17 +295,16 @@
 				</ul>
 			</div>
 			<div class="clear"></div>
-			<div class="copyright">
-				<p align="center">
-					Powered by <strong><a href="http://www.mycodes.net/"
-						title="源码之家" target="_blank">源码之家</a></strong> &copy; 2011-2015 All Right
-					Reserved.
-				</p>
-			</div>
-			<div class="copyright">
-				<p align="center">
-					<a href="#" target="_blank">浙ICP备11005891号</a>
-				</p>
+			<div class="bottom">
+				<div class="patecopy">
+					<p>
+						Powered by <strong>河北大厂农村商业银行股份有限公司</strong> &copy; 2011-2015 All Right
+						Reserved.
+					</p>
+					<p>
+						<a href="#" target="_blank">浙ICP备11005891号</a>
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>

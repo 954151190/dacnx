@@ -40,10 +40,12 @@
 				<li><a href="toAricleList?articleType=NL" title="农信要闻">农信要闻</a></li>
 				<li><a href="toAricleList?articleType=PL" title="产品展示">产品展示</a></li>
 				<li class="licur"><a href="toAricleList?articleType=SL" title="业务介绍">业务介绍</a></li>
-				<li><a href="messages.html" title="联系我们">联系我们</a></li>
+				<!-- 
 				<li><a href="#" title="其他模块">其他模块</a></li>
 				<li><a href="#" title="其他模块">其他模块</a></li>
 				<li><a href="#" title="其他模块">其他模块</a></li>
+				<li><a href="#" title="其他模块">其他模块</a></li>
+				 -->
 			</ul>
 		</div>
 	</div>
@@ -53,7 +55,7 @@
 		<div id="banh">
 			<ul>
 				<s:iterator value="photoList" var="photos">
-					<li><img src="showPhoto?photo.id=${ photos.id }" /></li>
+					<li><img src="showPhoto?photoType=0&photo.id=${ photos.id }" /></li>
 				</s:iterator>
 			</ul>
 		</div>
@@ -70,19 +72,6 @@
 				</ul>
 			</div>
 			<div class="left_bot"></div>
-			<div class="magtop10 search">
-				<p class="searchp01">站内搜索</p>
-				<form action="#" method="post">
-					<input name="" type="text" class="searchinp" />
-					<p class="searchp02">
-						<input type="submit" value="　　" class="searchbon" />
-					</p>
-				</form>
-
-			</div>
-			<div class="magtop10">
-				<a href="#" title="留言反馈"><img src="images/left01.gif" alt="留言反馈" /></a>
-			</div>
 		</div>
 		<div class="page_right">
 			<div class="pagetop">
@@ -108,20 +97,16 @@
 		<div class="clear"></div>
 		<div class="blank10"></div>
 	</div>
-	<div class="bot_nav">
-		<div class="bottom">
-			<div class="patecopy">
-				<p>
-					Powered by <strong><a href="http://www.mycodes.net/"
-						title="源码之家" target="_blank">源码之家</a></strong> &copy; 2011-2015 All Right
-					Reserved.
-				</p>
-				<p>
-					<a href="#" target="_blank">浙ICP备11005891号</a>
-				</p>
-			</div>
+	<div class="bottom">
+		<div class="patecopy">
+			<p>
+				Powered by <strong>河北大厂农村商业银行股份有限公司</strong> &copy; 2011-2015 All Right
+				Reserved.
+			</p>
+			<p>
+				<a href="#" target="_blank">浙ICP备11005891号</a>
+			</p>
 		</div>
 	</div>
-
 </body>
 </html>
